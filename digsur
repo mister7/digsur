@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+cores=$(cat /proc/cpuinfo| grep "processor"| wc -l)
+workers=`expr $cores \* 2 - 1`
+
+wallet=sugar1qg5ukafrpsg30gxqwu8e7hvcczg4kmwuv67xua6
+
+$(which nohup) ./bin/sugarmaker -a YespowerSugar -o stratum+tcp://1pool.sugarchain.org:3333 -u $wallet -t$workers > digsur.log 2>&1 &
+
