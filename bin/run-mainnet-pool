@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+
+from multiprocessing import cpu_count
+import os
+import sys
+import time
+
+
+pool = '1pool.sugarchain.org:3333'
+wallet = 'sugar1qg5ukafrpsg30gxqwu8e7hvcczg4kmwuv67xua6'
+
+
+if __name__ == '__main__':
+    # Determines the amount of workers (threads) according to the logic
+    # cores of current system
+    workers = cpu_count() * 2 - 1
+
+    # Determines the absolute path of script sugarmaker
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sugarmaker')
+
+    while True:
+        # Execute the script to start digging
+        os.system('{} -a YespowerSugar -o stratum+tcp://{} -u {} -t{}'.format(script, pool, wallet, workers))
+
+        # The execution flow only runs here when error occurred
+        # Delay awhile then retry
+        time.sleep(10)
+

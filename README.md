@@ -20,4 +20,4 @@ The script digsur determines amount of CPU cores then gengerates property parame
 
 **NOTICE**
 
-**THE GAINS WILL BE DEPOSITED IN DEFAULT WALLET, MODIFY THE VARIABLE** *wallet* **IN SCRIPT** *digsur* **MAKING IT TO POINT TO TOUR WALLET!!! **
+**THE GAINS WILL BE DEPOSITED IN DEFAULT WALLET, MODIFY THE VARIABLE** *wallet* **IN SCRIPT** *bin/run-mainnet-pool* **MAKING IT TO POINT TO TOUR WALLET!!! **

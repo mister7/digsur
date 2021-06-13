@@ -5,3 +5,6 @@
 # Ignore log file
 *.log
 
+# Ignore pyc files
+__pycache__/
+*.pyc
